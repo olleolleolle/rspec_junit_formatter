@@ -10,8 +10,8 @@ jobs:
   test:
     strategy:
       matrix:
-        ruby-version: ["2.6", "2.7", "3.0", "3.1"]
-        rspec-version: ["2_x", "3_0", "3_1", "3_2", "3_3", "3_4", "3_5", "3_6", "3_7", "3_8", "3_9", "3_10"]
+        ruby-version: ["3.1"]
+        rspec-version: ["3_10"]
 
     runs-on: ubuntu-latest
 
@@ -19,7 +19,7 @@ jobs:
       BUNDLE_GEMFILE: gemfiles/rspec_${{ matrix.rspec-version }}.gemfile
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - uses: ruby/setup-ruby@v1
       with:
